@@ -2,3 +2,14 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  /* Фоновое изображение (для тёмной темы) */
+ --font-family: var(--font-family, 'IBM Plex Mono', monospace);
+  --accent-color: #ff0070;        
+  --main-bg-color: #000028;        
+  --main-text-color: #f1b2ce;      
+  --heading-color: var(--heading-color);        
+  --menu-text-color: var(--accent-color);
+  --font-size: 18px;
+  --text-color: var(--text-color)
+}

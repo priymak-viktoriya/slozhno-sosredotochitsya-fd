@@ -2,4 +2,399 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color, #000028);
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  font-size: var(--font-size, 18px);
+  padding-right: 10px;
+}
+
+
+/* Шапка */
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  min-height: 668px;
+  height: 100vh;
+  padding: 10px;
+  margin-bottom: 43px;
+}
+
+/* Заголовок */
+.main-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  justify-self: start;
+  align-self: center;
+  text-align: left;
+  color: var(--heading-color);
+  line-height: 0.8;
+
+}
+
+
+/* Навигация с кнопками тем */
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  padding-top: 10px;
+
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-color);
+  font-size: inherit;
+  line-height: 1;
+  text-transform: lowercase;
+  padding: 3px 15px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--text-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--button-hover-border);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom-color: var(--text-color);
+  outline: none;
+}
+
+/* Подзаголовок в шапке */
+.header__subtitle {
+  align-self: center;
+  max-width: 360px;
+  line-height: 23.4px;
+  letter-spacing: 0.1em;
+
+}
+
+
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--main-bg-color);
+  font-weight: bold;
+}
+
+/* Декоративные уголки (общий класс decorated-zone) */
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--accent-color);
+}
+
+/* Правый верхний угол */
+.decorated-zone::before {
+  top: 20px;
+  right: 1px;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* Левый нижний угол */
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-right: none;
+  border-top: none;
+}
+
+/* Декоративная надпись REC (только в тёмной теме) */
+.header__rec {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  display: block;
+  font-family: inherit;
+  font-size: 18px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+/* Точка справа от REC */
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+/* В светлой теме скрываем REC */
+.theme-light .header__rec {
+  display: none;
+}
+
+/* main */
+
+.content-section {
+  margin-bottom: 55px;
+  padding-inline: 10px;
+}
+
+.content-section_title {
+  font-weight: bold;
+  font-size: inherit;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  letter-spacing: 0.1rem;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.block_title {
+  font-size: inherit;
+  font-weight: bold;
+  background-color: var(--accent-color);
+  color: var(--accent-text-color, #000028);
+  margin-top: 2px;
+}
+
+.block_undertitle {
+  font-weight: normal;
+  background-color: var(--accent-color);
+  color: var(--accent-text-color, #000028);
+  margin-top: 19px;
+}
+
+.block p {
+  line-height: 23.4px;
+  color: var(--text-color, #f1b2ce);
+  letter-spacing: 0.125rem;
+}
+
+.block a {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+  color: currentColor;
+}
+
+.block a:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.block a:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+
+.grid__image {
+  inline-size: 100%;
+}
+
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 638px;
+}
+
+
+
+@media (min-width: 768px) {
+
+  .header {
+    min-height: 1024px;
+    align-self: center;
+    margin-bottom: 60px;
+  }
+
+  .main-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__subtitle {
+    line-height: 23.4px;
+    letter-spacing: 0.1em;
+    justify-self: right;
+  }
+
+  .decorated-zone::before {
+    top: 20px
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+
+  }
+
+  .content-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+
+  .section_reasons {
+    display: block;
+    padding-top: 30px;
+
+  }
+
+  .title_reasons {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section_how {
+    padding-top: 30px;
+    margin-bottom: 80px;
+  }
+
+  .block_undertitle_text {
+    padding-top: 8px;
+  }
+
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-heading {
+    grid-column: 1/-1;
+  }
+
+  .grid__image {
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .grid__image:first-of-type {
+    grid-column: span 2;
+  }
+
+  .grid__image:nth-of-type(2) {
+    grid-row: span 2;
+  }
+
+  .grid__image:nth-of-type(3) {
+    grid-row: span 2;
+  }
+
+  .grid__image:last-of-type {
+    grid-column: span 2;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
+}
+
+
+
+
+
+@media (min-width: 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header {
+    min-height: 768px;
+  }
+
+  .header__subtitle {
+    max-width: 491px;
+  }
+
+
+  .content-section {
+    display: grid;
+    grid-template-columns: none;
+    padding-left: 16px;
+
+  }
+
+  .section_why,
+  .section_how {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .section_why .article-list,
+  .section_how .article-list {
+    grid-column: 2 / -1;
+  }
+
+  .section_reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .section_reasons .article-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-column: auto;
+
+  }
+
+  .content-section_title {
+    margin-bottom: 0px;
+  }
+
+
+  .section_how {
+    padding-top: 40px;
+    margin-bottom: 40px;
+
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  .footer {
+    min-height: 768px;
+    margin-top: 60px;
+  }
+
+
 }
