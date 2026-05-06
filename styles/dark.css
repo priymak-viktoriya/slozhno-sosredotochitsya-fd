@@ -13,7 +13,8 @@
   --text-color: #f1b2ce;
   --heading-color: #DB00FF;
   --accent-color: #ff0070;
-  --accent-text-color: #000028;
-  --button-hover-color: rgba(255, 0, 112, 0.4);
-  --border-color: #ff0070;
+}
+
+.theme-dark .header__rec {
+  display: block;
 }

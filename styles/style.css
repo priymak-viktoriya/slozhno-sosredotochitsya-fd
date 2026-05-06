@@ -2,13 +2,13 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background-color: var(--bg-color, #000028);
+  background-color: var(--bg-color, #000028, #fff1f7);
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  font-family: var(--font-family, 'IBM Plex Mono', monospace);
   font-size: var(--font-size, 18px);
-  padding-right: 10px;
 }
 
 
@@ -78,10 +78,9 @@
 /* Подзаголовок в шапке */
 .header__subtitle {
   align-self: center;
-  max-width: 360px;
-  line-height: 23.4px;
-  letter-spacing: 0.1em;
-
+  max-width: 355px;
+  width: 100vh;
+  margin-right: 10px;
 }
 
 
@@ -142,15 +141,11 @@
   box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
-/* В светлой теме скрываем REC */
-.theme-light .header__rec {
-  display: none;
-}
 
 /* main */
 
 .content-section {
-  margin-bottom: 55px;
+  margin-bottom: 50px;
   padding-inline: 10px;
 }
 
@@ -159,7 +154,6 @@
   font-size: inherit;
   color: var(--accent-color);
   margin-bottom: 20px;
-  letter-spacing: 0.1rem;
 }
 
 .article-list {
@@ -179,20 +173,18 @@
   font-weight: bold;
   background-color: var(--accent-color);
   color: var(--accent-text-color, #000028);
-  margin-top: 2px;
+
 }
 
-.block_undertitle {
+.section_how .block_title {
   font-weight: normal;
   background-color: var(--accent-color);
-  color: var(--accent-text-color, #000028);
-  margin-top: 19px;
+  margin-top: 8px;
 }
 
 .block p {
   line-height: 23.4px;
   color: var(--text-color, #f1b2ce);
-  letter-spacing: 0.125rem;
 }
 
 .block a {
@@ -226,7 +218,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 638px;
+  min-height: 668px;
+  height: 100vh;
 }
 
 
@@ -235,8 +228,9 @@
 
   .header {
     min-height: 1024px;
+    height: 10vh;
     align-self: center;
-    margin-bottom: 60px;
+    margin-bottom: 58px;
   }
 
   .main-title {
@@ -244,8 +238,6 @@
   }
 
   .header__subtitle {
-    line-height: 23.4px;
-    letter-spacing: 0.1em;
     justify-self: right;
   }
 
@@ -264,27 +256,27 @@
     grid-template-columns: 1fr 2fr;
     gap: 20px;
     padding-left: 20px;
+    padding-inline: 20px;
   }
-
 
   .section_reasons {
     display: block;
-    padding-top: 30px;
-
   }
 
   .title_reasons {
     display: grid;
     grid-template-columns: 1fr 2fr;
+  padding-top: 30px;
+  }
+
+  .section_reasons .article-list {
+    padding-top: 25px;
   }
 
   .section_how {
-    padding-top: 30px;
-    margin-bottom: 80px;
-  }
-
-  .block_undertitle_text {
-    padding-top: 8px;
+    padding-top: 25px;
+    margin-bottom: 90px;
+    gap: 20px
   }
 
 
@@ -319,11 +311,9 @@
   }
 
   .footer {
-    min-height: 1024px;
+    min-height: 1040px;
   }
 }
-
-
 
 
 
@@ -349,7 +339,6 @@
   .content-section {
     display: grid;
     grid-template-columns: none;
-    padding-left: 16px;
 
   }
 
@@ -367,24 +356,25 @@
     grid-template-columns: 1fr;
   }
 
-  .section_reasons .article-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    grid-column: auto;
+  .section_reasons .article-list { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    grid-column: auto; 
+ 
+  } 
+ 
+  .content-section_title { 
+    margin-bottom: -20px; 
+  } 
+ 
+ 
+  .section_how { 
+    padding-top: 20px; 
+    margin-bottom: 90px; 
+ 
+  } 
 
-  }
-
-  .content-section_title {
-    margin-bottom: 0px;
-  }
-
-
-  .section_how {
-    padding-top: 40px;
-    margin-bottom: 40px;
-
-  }
 
   .grid {
     grid-template-columns: repeat(3, 1fr);
