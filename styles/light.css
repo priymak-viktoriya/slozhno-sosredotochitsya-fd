@@ -25,13 +25,7 @@
   display: none;
 }
 
-.header__rec {
-  display: none;
-}
 
-.header__rec::after {
-  display: none;
-}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -55,7 +49,4 @@
     display: none;
   }
 
-  .header__rec::after {
-    display: none;
-  }
 }
