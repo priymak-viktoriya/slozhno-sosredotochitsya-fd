@@ -3,14 +3,27 @@
   и их переопределение под различные устройства
 */
 :root {
-  /* Фоновое изображение (для тёмной темы) */
+  /* Фоновое изображение (для cветлой темы) */
   --bg-image: url(../images/cover-image-light.png);
   --bg-color: #fff1f7;
   --text-color: #353430;
   --heading-color: #FFC2E6;
   --accent-color: #FF8DCB;
+  --header-subtitle-text: #353430;
+  --menu-color: #353430;
+  --title-block-color: #353430;
+  --border-color: #353430;
+  --button-hover-border: rgba(50, 49, 45, 0.4);
 }
 
-  .theme-light .header__rec {
-    display: none;
-  }
+.theme-light .header__rec {
+  display: none;
+}
+
+.header__rec {
+  display: none;
+}
+
+.header__rec::after {
+  display: none;
+}
