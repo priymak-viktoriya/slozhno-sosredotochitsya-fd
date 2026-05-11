@@ -18,32 +18,29 @@
   --title-block-color: #000028;
   --border-color: #FF0070;
   --button-hover-border: rgba(255, 0, 112, 0.4);
-  ;
 }
 
 .theme-dark .header__rec {
   display: block;
 }
 
-.header__rec {
-  position: absolute;
-  top: 25px;
-  right: 30px;
-  display: block;
-  font-family: inherit;
-  font-size: 18px;
-  color: var(--accent-color);
-  text-transform: uppercase;
-}
 
-/* Точка справа от REC */
-.header__rec::after {
-  content: "";
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-left: 10px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0 0 4px 2px var(--accent-color);
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-image: url(../images/cover-image-dark.png);
+    --bg-color: #000028;
+    --text-color: #f1b2ce;
+    --heading-color: #DB00FF;
+    --accent-color: #ff0070;
+    --header-subtitle-text: #000028;
+    --menu-color: #FF0070;
+    --title-block-color: #000028;
+    --border-color: #FF0070;
+    --button-hover-border: rgba(255, 0, 112, 0.4);
+  }
+
+  .theme-dark .header__rec {
+    display: block;
+  }
 }

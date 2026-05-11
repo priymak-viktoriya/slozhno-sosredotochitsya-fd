@@ -35,6 +35,28 @@
 
 }
 
+.header__rec {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  display: none;
+  font-family: inherit;
+  font-size: 18px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+/* Точка справа от REC */
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
 
 /* Навигация с кнопками тем */
 .header__theme-menu {
@@ -177,13 +199,10 @@
 
 }
 
-.section_how .block_title {
-  font-weight: normal;
-  background-color: var(--accent-color);
-}
-
 .title_how {
   margin-bottom: 10px;
+  font-weight: normal;
+  background-color: var(--accent-color);
 }
 
 .block p {
